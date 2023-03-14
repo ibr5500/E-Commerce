@@ -2,38 +2,39 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import baseURL from '../api';
 
 const initialState = {
-  register: [],
+  login: [],
   error: '',
 };
 
-export const createNewUser = createAsyncThunk('register/createNewUser', (newUser) => {
-  const res = fetch(`${baseURL}/users`, {
+export const loginUser = createAsyncThunk('login/loginUser', (currentUser) => {
+  const res = fetch(`${baseURL}/auth/login`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
     },
-    body: JSON.stringify(newUser),
+    body: JSON.stringify(currentUser),
   })
     .then((res) => res.json())
+    .then((json) => console.log(json))
     .catch((error) => console.error(error));
   return res;
 });
 
-const registerSlice = createSlice({
-  name: 'register',
+const loginSlice = createSlice({
+  name: 'login',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(createNewUser.fulfilled, (state, action) => {
+    builder.addCase(loginUser.fulfilled, (state, action) => {
       const stateFulfilled = state;
-      stateFulfilled.register = action.payload;
+      stateFulfilled.login = action.payload;
     });
 
-    builder.addCase(createNewUser.rejected, (state, action) => {
+    builder.addCase(loginUser.rejected, (state, action) => {
       const stateRejected = state;
       stateRejected.error = action.error.message;
     });
   },
 });
 
-const registerReducer = registerSlice.reducer;
-export default registerReducer;
+const loginReducer = loginSlice.reducer;
+export default loginReducer;

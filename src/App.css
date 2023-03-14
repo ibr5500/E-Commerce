@@ -46,11 +46,12 @@
   width: 35%;
 }
 
-.container-1>h2 {
-  font-family: 'Merriweather';
+.container-1 > h2 {
+  font-family: 'Merriweather', monospace;
 }
+
 .shop-btn {
-  background: #F86338;
+  background: #f86338;
   color: #fff;
   border-radius: 8px;
   width: -moz-fit-content;
@@ -58,9 +59,9 @@
 }
 
 .shop-btn:hover {
-  background:  #fff;
-  color: #F86338;
-  border: 1px solid #F86338;
+  background: #fff;
+  color: #f86338;
+  border: 1px solid #f86338;
 }
 
 .container-2 {
@@ -93,11 +94,11 @@
 }
 
 .see-all {
-  color: #F86338;
+  color: #f86338;
 }
 
 .footer {
-  background: #F86338;
+  background: #f86338;
   color: #fff;
   bottom: 0;
 }
