@@ -15,7 +15,6 @@ export const loginUser = createAsyncThunk('login/loginUser', (currentUser) => {
     body: JSON.stringify(currentUser),
   })
     .then((res) => res.json())
-    .then((json) => console.log(json))
     .catch((error) => console.error(error));
   return res;
 });
@@ -25,8 +24,12 @@ const loginSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(loginUser.fulfilled, (state, action) => {
+      const result = action.payload;
       const stateFulfilled = state;
-      stateFulfilled.login = action.payload;
+      stateFulfilled.login = result;
+      if (result) {
+        sessionStorage.setItem('Token', result.token);
+      }
     });
 
     builder.addCase(loginUser.rejected, (state, action) => {
