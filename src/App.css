@@ -38,6 +38,64 @@
   }
 }
 
+.home {
+  width: auto;
+}
+
+.container-1 {
+  width: 35%;
+}
+
+.container-1>h2 {
+  font-family: 'Merriweather';
+}
+.shop-btn {
+  background: #F86338;
+  color: #fff;
+  border-radius: 8px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.shop-btn:hover {
+  background:  #fff;
+  color: #F86338;
+  border: 1px solid #F86338;
+}
+
+.container-2 {
+  width: 65%;
+}
+
+.home-image {
+  width: 50%;
+  height: 500px;
+}
+
+.cards-container {
+  width: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 100px 0;
+}
+
+.cat-img {
+  width: 320px;
+  height: 340px;
+}
+
+.content {
+  top: 50%;
+  width: 70%;
+  left: 12.5%;
+  margin: 0 15px;
+  text-align: left;
+}
+
+.see-all {
+  color: #F86338;
+}
+
 .footer {
   background: #F86338;
   color: #fff;
