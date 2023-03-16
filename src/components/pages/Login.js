@@ -37,11 +37,11 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <div className="input-floor">
           <label
-            htmlFor="name-input"
+            htmlFor="username-input"
             className="w-100 my-2"
           >
             <input
-              id="name-input"
+              id="username-input"
               className="form-control py-2  px-4 "
               type="text"
               value={user.username}
@@ -50,11 +50,11 @@ const Login = () => {
             />
           </label>
           <label
-            htmlFor="name-input"
+            htmlFor="password-input"
             className="w-100 my-2"
           >
             <input
-              id="name-input"
+              id="password-input"
               className="form-control py-2  px-4 "
               type="password"
               value={user.password}
