@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { createNewUser } from '../../redux/users/registerSlice';
+import { createNewUser } from '../../redux/users/userSlice';
 
 const Signup = () => {
   const dispach = useDispatch();

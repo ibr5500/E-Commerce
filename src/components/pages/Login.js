@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../redux/users/loginSlice';
+import { loginUser } from '../../redux/users/userSlice';
 
 const Login = () => {
-  const dispach = useDispatch();
+  // const [loading, setLoading] = useState(false);
 
   const [user, setUser] = useState({
     username: '',
     password: '',
   });
 
+  const dispach = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault(e);
 
-    const currentUser = {
-      user: { ...user },
-    };
-
-    dispach(loginUser(currentUser));
+    dispach(loginUser({ ...user }));
 
     if (user.username && user.password) {
       setTimeout(() => {
-        alert('login sucssfull!!');
+        alert(`Login suceessfull! for ${user.username}`);
       }, 2000);
     } else {
       alert('Username or Password cannot be empty !!'); // eslint-disable-line no-alert
