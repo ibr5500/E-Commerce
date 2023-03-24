@@ -17,6 +17,10 @@ const Login = () => {
 
     dispach(loginUser({ ...user }));
 
+    if (!user.error) {
+      console.log('passed');
+    }
+
     if (user.username && user.password) {
       setTimeout(() => {
         alert(`Login suceessfull! for ${user.username}`);
