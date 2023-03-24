@@ -20,6 +20,7 @@ const Product = () => {
               alt={p.title}
             />
             <h2>{p.title}</h2>
+            <p>{p.price}</p>
           </div>
         ))}
     </div>
