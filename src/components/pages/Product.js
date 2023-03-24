@@ -9,7 +9,21 @@ const Product = () => {
   useEffect(() => {
     dispach(fetchProducts());
   }, [dispach]);
-  return <div>{dataList && dataList.map((p) => <h2 key={p.id}>{p.title}</h2>)}</div>;
+
+  return (
+    <div>
+      {dataList
+        && dataList.map((p) => (
+          <div key={p.id}>
+            <img
+              src={p.image}
+              alt={p.title}
+            />
+            <h2>{p.title}</h2>
+          </div>
+        ))}
+    </div>
+  );
 };
 
 export default Product;
